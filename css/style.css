@@ -16,30 +16,28 @@ html, body {
 }
 
 #text {
-  margin-bottom: 200px;
-  margin: 80px 40px 200px 40px;
-  /*
-      & canvas {
-          //width: 1400px !important;
-          //width: clamp(40px, 5vw, 1200px) !important;
-
-          width: 100% !important;
-          height: auto !important;
-
-       }*/
+  margin: 180px 0 100px 0;
+}
+@media screen and (max-width: 991px) {
+  #text canvas {
+    height: 100px !important;
+    width: auto !important;
+    margin: 0 auto;
+  }
 }
 
-/*
-#mainContainer {
-    text-align: center;
-    color: #fff;
-    font-family: monospace;
-    //margin-top: 200px;
-    font-size: 60px;
-}*/
-/*
-#mainContainer canvas {
-    width: 350px !important;
-    height: 100px !important;
-} 
-*//*# sourceMappingURL=style.css.map */
+@media screen and (min-width: 992px) {
+  #textLoginPhone canvas {
+    display: none;
+  }
+}
+
+#textLogin canvas {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  #textLogin canvas {
+    display: block;
+    margin: 0 auto 0 auto;
+  }
+}/*# sourceMappingURL=style.css.map */

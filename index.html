@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onflow</title>
+    <title>Onflow-effect</title>
     
     <link rel="stylesheet" href="css/style.css">
 
@@ -16,106 +16,109 @@
 <body>
  
 
-<!-- --> 
-    <div id="particles-js"></div>
-   
-    <div>
 
-        <h1 id="mainContainer"></h1>
+<div id="particles-js"></div>
 
-        <div id="text"></div>
-        
-    </div>
+<div>
 
-    <div>
-        
-        <!--
-        <div id="text2"></div>
-        -->
-        
-    </div>
+
+    <div id="text"></div>
+    
+
+</div>
+
+<div>
+    
+
+    <div id="textLoginPhone"></div>
+    <div id="textLogin"></div>
+    
+    
+</div>
     
 
 
-    <script src="js/blotter.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/fliesMaterial.js"></script>
+<script src="js/blotter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/fliesMaterial.js"></script>
 
-    <script>
-        //get the div
-        let = innerText = document.getElementById("text");
-        let = innerText2 = document.getElementById("text2");
+<script>
+    //get the div
+    let = innerText = document.getElementById("text");
 
-        //setting blotter txt
-        let text = new Blotter.Text("ONFLOW", {
-            family: "Montserrat", 
-            weight: 700,
-            size: 320, 
-            fill: "#95ACFF",
-        });
-        let text2 = new Blotter.Text("Log in", {
-            family: "Montserrat", 
-            weight: 700,
-            size: 150, 
-            fill: "#95ACFF",
-        });
+    let = innerTextLogin = document.getElementById("textLogin");
+    let = innerTextLoginPhone = document.getElementById("textLoginPhone");
 
-        //setting blotter material
-        let material = new Blotter.FliesMaterial();
-        material.uniforms.uPointCellWidth.value = 0.008;
-        material.uniforms.uPointRadius.value = 0.2;
-        material.uniforms.uSpeed.value = 2;
-        //material.uniforms.uPointCellWidth.value = 0.008;
-        //material.uniforms.uPointRadius.value = 0.3;
-        //material.uniforms.uSpeed.value = .1;
-
-        // O nás material.uniforms.uPointRadius.value = 0.3;
+    //setting blotter txt
+    let text = new Blotter.Text("ONFLOW", {
+        family: "Montserrat, sans-serif", 
+        weight: 700,
+        size: 320, 
+        fill: "#95ACFF",
+    });
 
 
-        let material2 = new Blotter.FliesMaterial();
-        material2.uniforms.uPointCellWidth.value = 0.012;
-        material2.uniforms.uPointRadius.value = 0.3;
-        material2.uniforms.uSpeed.value = 1;
+    let textLogin = new Blotter.Text("Login", {
+        family: "Montserrat, sans-serif", 
+        weight: 700,
+        size: 240, 
+        fill: "#95ACFF",
+    });
 
-        let blotter = new Blotter(material, {
-            texts: text,
-        });
+    let textLoginPhone = new Blotter.Text("Login", {
+        family: "Montserrat, sans-serif", 
+        weight: 700,
+        size: 100, 
+        fill: "#95ACFF",
+    });
 
-        let blotter2 = new Blotter(material2, {
-            texts: text2,
-        });
+    //setting blotter material
+    let material = new Blotter.FliesMaterial();
+    material.uniforms.uPointCellWidth.value = 0.008;
+    material.uniforms.uPointRadius.value = 0.2;
+    material.uniforms.uSpeed.value = 2;
+    
 
-        //append blotter to the div
-        let scope = blotter.forText(text);
-        let scope2 = blotter2.forText(text2);
-        scope.appendTo(innerText);
-        scope2.appendTo(innerText2);
+    let materialLogin = new Blotter.FliesMaterial();
+    materialLogin.uniforms.uPointCellWidth.value = 0.010;  // 0.009;
+    materialLogin.uniforms.uPointRadius.value = 0.22;      // 0.2;
+    materialLogin.uniforms.uSpeed.value = 3;               // 3;
 
-    </script>
-<!--
-    <script>
-        
-        container = document.getElementById("mainContainer");
+    let materialLoginPhone = new Blotter.FliesMaterial();
+    materialLoginPhone.uniforms.uPointCellWidth.value = 0.016;
+    materialLoginPhone.uniforms.uPointRadius.value = 0.27;
+    materialLoginPhone.uniforms.uSpeed.value = 3;
 
-        let text = new Blotter.Text("ONFLOW", {
-            //family: "Sans serif",
-            size: 350, 
-            fill: "#32F174",
-        });
 
-        let material = new Blotter.FliesMaterial();
-        material.uniforms.uPointCellWidth.value = 0.008;
-        material.uniforms.uPointRadius.value = 0.2;
-        material.uniforms.uSpeed.value = 2;
+    let blotter = new Blotter(material, {
+        texts: text,
+    });
 
-        let blotter = new Blotter(material, {
-            texts: text,
-        });
 
-        let scope = blotter.forText(text);
-        scope.appendTo(container);
+    let blotterLogin = new Blotter(materialLogin, {
+        texts: textLogin,
+    });
 
-    </script>
--->
+    let blotterLoginPhone = new Blotter(materialLoginPhone, {
+        texts: textLoginPhone,
+    });
+
+
+
+    //append blotter to the div
+    let scope = blotter.forText(text);
+    scope.appendTo(innerText);
+
+
+    let scopeLogin = blotterLogin.forText(textLogin);
+    scopeLogin.appendTo(innerTextLogin);
+
+    let scopeLoginPhone = blotterLoginPhone.forText(textLoginPhone);
+    scopeLoginPhone.appendTo(innerTextLoginPhone);
+
+
+
+</script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script src="./js/particles-script.js"></script>
